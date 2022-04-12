@@ -1,10 +1,14 @@
+//import de css comum a todas as páginas
 import './App.css';
-import React, { Component } from "react";
-import { useState } from "react";
+
+// import de React 
+import React from 'react'
+
+//import de componentes
+import Formulario from './components/Form';
 
 function App() {
 
-  
 }
 
 
