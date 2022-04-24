@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import Axios from 'axios'
 
 //imports Bootstrap
 import Form from 'react-bootstrap/Form'
@@ -10,83 +11,100 @@ import Col from 'react-bootstrap/Col'
 
 function Formulario() {
 
-    //capitação dos valores do formulário
-    const [values, setValues] = useState()
+//capitação dos valores do formulário
+const [values, setValues] = useState()
 
-    const handleChangeValues = (value) => {
-        setValues((prevValue) => ({
-                ...prevValue,
-                [value.target.id] : value.target.value
-            })
-        )
-    }
+const handleChangeValues = (value) => {
+    setValues((prevValue) => ({
+            ...prevValue,
+            [value.target.id] : value.target.value
+        })
+    )
+}
 
-  //função handle do botão enviar
-  const handleClickButton = () => {
-      console.log(values)
-  }
+//função handle do botão enviar, usando axios como middleware para req e res.
+const handleClickButton = () => {
+    Axios.post("http://localhost:3001/register", {
+    formCNPJ: values.formCNPJ,
+    formCorporateName: values.formCorporateName,    
+    formUserName: values.formUserName,
+    formEmail: values.formEmail,
+    formPassword: values.formPassword
+    })
+}
 
-  return (
 
-    <Container> 
+return (
 
-    <h1>Cadastre sua empresa para ser um ponto de coleta de 
-        recicláveis eletrônicos!
-    </h1>
+<Container> 
 
-        <Row>
-            <Col md={{span:6, offset: 3 }}>
+<h1>Cadastre sua empresa para ser um ponto de coleta de 
+    recicláveis eletrônicos!
+</h1>
 
-                <Form>
-                <Form.Group className="mb-3" controlId="formUserName">
-                <Form.Label>Nome completo</Form.Label>
-                <Form.Control type="text" placeholder="Informe seu nome completo" 
-                onChange = {handleChangeValues}
-                />
-                </Form.Group>
+    <Row>
+        <Col md={{span:6, offset: 3 }}>
 
-                <Form.Group className="mb-3" controlId="formCorporateName">
-                <Form.Label>Razão Social</Form.Label>
-                <Form.Control type="text" 
-                placeholder="Informe a Razão social de sua empresa" 
-                onChange = {handleChangeValues}
-                />
-                </Form.Group>
+            <Form> 
 
-                <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Insira seu endereço de e-mail" 
-                onChange = {handleChangeValues}
-                />
-                </Form.Group>
+            <Form.Group className="mb-3" controlId="formUserName">
+            <Form.Label>Nome completo</Form.Label>
+            <Form.Control type="text" placeholder="Informe seu nome completo" 
+            onChange = {handleChangeValues}
+            />
+            </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formPassword">
-                <Form.Label>Senha</Form.Label>
-                <Form.Control type="password" placeholder="Senha de Acesso ao portal" 
-                onChange = {handleChangeValues}
-                />
-                </Form.Group>
+            <Form.Group className="mb-3" controlId="formCorporateName">
+            <Form.Label>Razão Social</Form.Label>
+            <Form.Control type="text" 
+            placeholder="Informe a Razão social de sua empresa" 
+            onChange = {handleChangeValues}
+            />
+            </Form.Group>
 
-                
-                <Form.Text className="text-muted">
-                    Você concorda com a disponibilização dos dados de sua empresa para
-                    que as pessoas possam encontra-la e realizar a entrega dos recicláveis.
-                </Form.Text>
-                
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Concordo" />
-                </Form.Group>
-                
-                <Button variant="primary" type="submit" 
-                onClick ={() => handleClickButton()}>
-                Enviar
-                </Button>
-            </Form>
-        </Col>
-    </Row>
-    
-  </Container>
-  )
+            <Form.Group className="mb-3" controlId="formCNPJ">
+            <Form.Label>CNJPJ</Form.Label>
+            <Form.Control type="text" placeholder="Informe o CNPJ da Empresa" 
+            onChange = {handleChangeValues}
+            />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Insira seu endereço de e-mail" 
+            onChange = {handleChangeValues}
+            />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formPassword">
+            <Form.Label>Senha</Form.Label>
+            <Form.Control type="password" placeholder="Senha de Acesso ao portal" 
+            onChange = {handleChangeValues}
+            />
+            </Form.Group>
+
+            
+            <Form.Text className="text-muted">
+                Você concorda com a disponibilização dos dados de sua empresa para
+                que as pessoas possam encontra-la e realizar a entrega dos recicláveis.
+            </Form.Text>
+            
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Concordo" />
+            </Form.Group>
+            
+            <Button variant="primary" type="submit" 
+            onClick = {() => handleClickButton()}>
+            Enviar
+            </Button>
+        </Form>
+    </Col>
+</Row>
+
+</Container>
+)
 }
 
 export default Formulario
+
+
