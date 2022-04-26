@@ -41,4 +41,17 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
     })
 })
 
+
+//retornando dados do server para login
+app.get("/getLogin", (req, res) => {
+    
+    let SQL = "SELECT * FROM empresasRegistradas;"
+
+    db.query(SQL, (err, result) => {
+        if(err) console.log(err)
+        else res.send(result)
+    })
+})
+
+
 app.listen(3001, () => console.log('rodando servidor'))

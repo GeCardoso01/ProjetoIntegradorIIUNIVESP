@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import ReactDOM from 'react-dom';
 import Axios from 'axios'
 
@@ -106,5 +106,3 @@ return (
 }
 
 export default Formulario
-
-

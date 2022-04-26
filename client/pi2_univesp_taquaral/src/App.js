@@ -2,13 +2,18 @@
 import './App.css';
 
 // import de React 
-// import React from 'react'
+import React from 'react'
 
-//import de componentes
-// import Formulario from './components/Form';
+//import de routes
+import Routes from './routes';
+import AppRoutes from './routes';
 
 function App() {
-
+   return (
+      <div>
+         <AppRoutes />
+      </div>
+   )
 }
 
 

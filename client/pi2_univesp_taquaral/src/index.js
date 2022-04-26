@@ -5,15 +5,12 @@ import './index.css';
 //import Css do Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+//import de componentes
 import App from './App';
-import Formulario from './components/Form';
 
 ReactDOM.render(
-
   <div>
     <App />
-    <Formulario />
   </div>,
   document.getElementById('root')
 );
-
