@@ -1,3 +1,6 @@
+//import react-router-dom
+import { BrowserRouter  } from 'react-router-dom';
+
 //import de css comum a todas as páginas
 import './App.css';
 
@@ -5,8 +8,8 @@ import './App.css';
 import React from 'react'
 
 //import de routes
-import Routes from './routes';
 import AppRoutes from './routes';
+
 
 function App() {
    return (

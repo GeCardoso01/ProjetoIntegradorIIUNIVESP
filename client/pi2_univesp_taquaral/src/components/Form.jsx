@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import ReactDOM from 'react-dom';
 import Axios from 'axios'
 
 //imports Bootstrap
@@ -8,6 +7,9 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+
+//import de css comum a todas as páginas
+import '../App.css';
 
 function Formulario() {
 
@@ -36,7 +38,7 @@ const handleClickButton = () => {
 
 return (
 
-<Container> 
+<Container id="containerFormulario"> 
 
 <h1>Cadastre sua empresa para ser um ponto de coleta de 
     recicláveis eletrônicos!

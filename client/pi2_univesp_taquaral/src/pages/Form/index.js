@@ -1,9 +1,14 @@
 import React from "react"
 
-function Form() {
+//import do componente Form
+import Formulario from "../../components/Form"
+
+
+
+function paginaInicial() {
     return (
-        <h1>Página form</h1>
+        <h1><Formulario /></h1>
     )
 }
 
-export default Form
+export default paginaInicial
