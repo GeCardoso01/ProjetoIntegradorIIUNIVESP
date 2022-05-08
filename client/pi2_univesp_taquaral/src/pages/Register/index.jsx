@@ -1,7 +1,5 @@
-import React from "react"
-
 //import do componente Form
-import Formulario from "../../components/Form"
+import Formulario from "../../components/FormRegister"
 
 
 

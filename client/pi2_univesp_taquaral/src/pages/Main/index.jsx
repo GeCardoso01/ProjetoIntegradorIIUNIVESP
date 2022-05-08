@@ -12,7 +12,6 @@ function Main() {
     return (
         <Container>        
             <Link class="link" to="/"> <h1> Página inicial </h1></Link> 
-  
             <ul>
                 <li>
                     <Link to="/form"> Registre-se </Link> 
@@ -21,7 +20,6 @@ function Main() {
                     <Link to="/login"> Login </Link> 
                 </li>
             </ul>
-            
         </Container>
 
     )
