@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Axios from 'axios'
 
 //imports Bootstrap
@@ -47,7 +47,7 @@ return (
     <Row>
         <Col md={{span:6, offset: 3 }}>
 
-            <Form> 
+            <Form onSubmit={e => e.preventDefault()}> 
 
             <Form.Group className="mb-3" controlId="formUserName">
             <Form.Label>Nome completo</Form.Label>

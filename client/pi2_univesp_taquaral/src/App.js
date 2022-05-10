@@ -1,6 +1,3 @@
-//import react-router-dom
-import { BrowserRouter  } from 'react-router-dom';
-
 //import de css comum a todas as páginas
 import './App.css';
 

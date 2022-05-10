@@ -1,7 +1,6 @@
-var express = require('express')
-var app = express()
-const mysql = require("mysql")
-
+const express = require("express");
+const app = express();
+const mysql = require("mysql");
 
 const db = mysql.createPool({
     host: "localhost",
@@ -22,8 +21,11 @@ app.use((req, res, next) => {
     next();
     });
 
+
 app.use(express.json())
 
+
+//tratamento de request de registro
 app.post("/register", (req, res) => {
     const { formCorporateName } = req.body
     const  { formUserName } = req.body
@@ -32,6 +34,8 @@ app.post("/register", (req, res) => {
     const { formCNPJ } = req.body
 
     console.log(req.body)
+
+
     let SQL = `INSERT INTO empresasRegistradas (\
 idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 '${formCNPJ}', '${formCorporateName}', '${formUserName}', '${formEmail}', '${formPassword}');` 
@@ -42,15 +46,19 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 })
 
 
-//retornando dados do server para login
-app.get("/getLogin", (req, res) => {
+
+//tratamento de request de login
+app.post("/login", (req, res) => {
     
     let SQL = "SELECT * FROM empresasRegistradas;"
+
+    console.log(req.body)
 
     db.query(SQL, (err, result) => {
         if(err) console.log(err)
         else res.send(result)
     })
+    
 })
 
 

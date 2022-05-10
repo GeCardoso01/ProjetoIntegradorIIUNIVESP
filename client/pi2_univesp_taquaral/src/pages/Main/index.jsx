@@ -11,7 +11,7 @@ import "../../App.css"
 function Main() {
     return (
         <Container>        
-            <Link class="link" to="/"> <h1> Página inicial </h1></Link> 
+            <Link className="link" to="/"> <h1> Página inicial </h1></Link> 
             <ul>
                 <li>
                     <Link to="/form"> Registre-se </Link> 
