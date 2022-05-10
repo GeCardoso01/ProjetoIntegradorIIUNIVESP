@@ -3,6 +3,7 @@ var app = express()
 const mysql = require("mysql")
 
 
+//conexão com o banco de dados
 const db = mysql.createPool({
     host: "localhost",
     user: "root",
@@ -17,13 +18,15 @@ app.use((req, res, next) => {
       "Access-Control-Allow-Headers",
       "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
     );
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-    res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE, SELECT");
+    res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE, SELECT");
     next();
     });
 
+//instanciando o express json
 app.use(express.json())
 
+//Recebendo dados do pedido de registro
 app.post("/register", (req, res) => {
     const { formCorporateName } = req.body
     const  { formUserName } = req.body
@@ -42,7 +45,7 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 })
 
 
-//retornando dados do server para login
+//retornando dados do server para login - posteriormente deve ser RETIRADO. 
 app.get("/getLogin", (req, res) => {
     
     let SQL = "SELECT * FROM empresasRegistradas;"
@@ -50,6 +53,20 @@ app.get("/getLogin", (req, res) => {
     db.query(SQL, (err, result) => {
         if(err) console.log(err)
         else res.send(result)
+    })
+})
+
+//recebendo dados de login para verificação
+app.post("/login", (req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+
+    db.query("SELECT * FROM empresasRegistradas WHERE idEmail=? AND idSenha=?", 
+    [email, password], (req, res) => {
+        if(err) {
+            res.send(err)
+        }
+        res.send(res)
     })
 })
 
