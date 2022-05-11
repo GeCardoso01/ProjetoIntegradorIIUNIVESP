@@ -19,8 +19,8 @@ function FormLogin() {
     //função Handle do envio para transmitir informações ao servidor
     const handleClickButton = () => {
         Axios.post("http://localhost:3001/login", {
-            email: email.formEmail,
-            password: password.formPassword
+            formEmail: email.formEmail,
+            formPassword: password.formPassword
         }).then(response => {
             console.log(response)
         })

@@ -47,7 +47,7 @@ return (
     <Row>
         <Col md={{span:6, offset: 3 }}>
 
-            <Form onSubmit={e => e.preventDefault()}> 
+            <Form> 
 
             <Form.Group className="mb-3" controlId="formUserName">
             <Form.Label>Nome completo</Form.Label>

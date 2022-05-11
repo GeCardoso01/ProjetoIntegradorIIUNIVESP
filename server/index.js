@@ -33,9 +33,6 @@ app.post("/register", (req, res) => {
     const { formPassword } = req.body
     const { formCNPJ } = req.body
 
-    console.log(req.body)
-
-
     let SQL = `INSERT INTO empresasRegistradas (\
 idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 '${formCNPJ}', '${formCorporateName}', '${formUserName}', '${formEmail}', '${formPassword}');` 
@@ -50,15 +47,28 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 //tratamento de request de login
 app.post("/login", (req, res) => {
     
-    let SQL = "SELECT * FROM empresasRegistradas;"
+    const email = `'${req.body.FormEmail}'`
+    const password = `'${req.body.FormPassword}'`
 
-    console.log(req.body)
+    let SQL = "SELECT * FROM empresasRegistradas WHERE idEmail = ? AND idSenha = ?;"
 
-    db.query(SQL, (err, result) => {
-        if(err) console.log(err)
-        else res.send(result)
-    })
-    
+    db.query(
+        SQL,
+        [email, password],
+        (err, result) => {
+            if (err) {
+                res.send({ err: err})
+            }
+
+            if (result.length > 0) {
+                res.send(result)
+            }
+            else {
+                // res.send({ message: "Senha ou usuário incorreto"})
+                res.send({ message: email, password})
+            }
+        }
+    )
 })
 
 
