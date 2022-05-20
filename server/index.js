@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 
 const db = mysql.createPool({
     host: "localhost",
@@ -8,6 +11,10 @@ const db = mysql.createPool({
     password: "univesp",
     database: "registrosEcoPontos"
 })
+
+
+
+
 
 //permissoes para cors para solucionar problemas com localhost, etc. 
 app.use((req, res, next) => {
@@ -21,8 +28,9 @@ app.use((req, res, next) => {
     next();
     });
 
-
 app.use(express.json())
+
+
 
 
 //tratamento de request de registro
@@ -32,7 +40,7 @@ app.post("/register", (req, res) => {
     const { formEmail } = req.body
     const { formPassword } = req.body
     const { formCNPJ } = req.body
-
+    
     let SQL = `INSERT INTO empresasRegistradas (\
 idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 '${formCNPJ}', '${formCorporateName}', '${formUserName}', '${formEmail}', '${formPassword}');` 
@@ -44,32 +52,27 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 
 
 
+
 //tratamento de request de login
 app.post("/login", (req, res) => {
-    
-    const email = `'${req.body.FormEmail}'`
-    const password = `'${req.body.FormPassword}'`
+    const email = req.body.email;
+    const password = req.body.password;
 
-    let SQL = "SELECT * FROM empresasRegistradas WHERE idEmail = ? AND idSenha = ?;"
+    db.query("SELECT * FROM empresasRegistradas WHERE idEmail = ?", [email], (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+    if (result.length > 0) {
+        if (password === result[0].idSenha) {
+            res.send({ msg: "Usuário logado. Bem vindo!" })
+        } else {res.send({ msg: "Senha incorreta" })}
+    }
+      else {res.send({ msg: "Usuário inexistente"})}
+    }
+)
+});
 
-    db.query(
-        SQL,
-        [email, password],
-        (err, result) => {
-            if (err) {
-                res.send({ err: err})
-            }
 
-            if (result.length > 0) {
-                res.send(result)
-            }
-            else {
-                // res.send({ message: "Senha ou usuário incorreto"})
-                res.send({ message: email, password})
-            }
-        }
-    )
-})
 
 
 app.listen(3001, () => console.log('rodando servidor'))

@@ -1,55 +1,65 @@
-//import de dependencias 
-import { useState } from "react"
-import Axios from "axios"
+import { useState } from "react";
+import * as yup from "yup";
+import { ErrorMessage, Formik, Form, Field } from "formik";
+import Axios from "axios";
 
-//imports Bootstrap
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-
-function FormLogin() {
+function App() {
     
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const handleLogin = (values) => {
+    Axios.post("http://localhost:3001/login", {
+      email: values.email,
+      password: values.password,
+    }).then((response) => {
+      alert(response.data.msg);
+    });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log("enviado", {email, password})
-    }
+  const validationsLogin = yup.object().shape({
+    email: yup
+      .string()
+      .email("email inválido")
+      .required("O email é obrigatório"),
+    password: yup
+      .string()
+      .min(8, "A senha deve ter pelo menos 8 caracteres")
+      .required("A senha é obrigatória"),
+  });
 
-    //função Handle do envio para transmitir informações ao servidor
-    const handleClickButton = () => {
-        Axios.post("http://localhost:3001/login", {
-            formEmail: email.formEmail,
-            formPassword: password.formPassword
-        }).then(response => {
-            console.log(response)
-        })
-    }
+  return (
+    <div className="container">
+      <Formik
+        initialValues={{}}
+        onSubmit={handleLogin}
+        validationSchema={validationsLogin}
+      >
+        <Form className="login-form">
+          <div className="login-form-group">
+            <Field name="email" className="form-field" placeholder="Email" />
 
-    return (
-    <Form onSubmit={handleSubmit}>
-    <Form.Group className="mb-3" controlId="formEmail">
-    <Form.Label>E-mail</Form.Label>
-    <Form.Control type="email" placeholder="Preencha seu e-mail" 
-    value={email} onChange={(e) => setEmail(e.target.value)}/>
-    <Form.Text className="text-muted">
-    </Form.Text>
-    </Form.Group>
+            <ErrorMessage
+              component="span"
+              name="email"
+              className="form-error"
+            />
+          </div>
+          {/*Outro campo*/}
+          <div className="form-group">
+            <Field name="password" className="form-field" placeholder="Senha" />
 
-    <Form.Group className="mb-3" controlId="formPassword">
-    <Form.Label>Senha</Form.Label>
-    <Form.Control type="password" placeholder="Informe sua senha" 
-    value={password} onChange={(e) => setPassword(e.target.value)} />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Me manter conectado" />
-    </Form.Group>
-    <Button variant="primary" type="submit" 
-    onClick={() => handleClickButton()} >
-    Login
-    </Button>
-    </Form>
-    )
+            <ErrorMessage
+              component="span"
+              name="password"
+              className="form-error"
+            />
+          </div>
+
+          <button className="button" type="submit">
+            Login
+          </button>
+        </Form>
+      </Formik>
+    </div>
+  )
 }
 
-export default FormLogin
+export default App;
