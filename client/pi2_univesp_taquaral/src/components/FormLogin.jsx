@@ -16,7 +16,10 @@ function App() {
     }).then((response) => {
       if (response.data.isAuthenticated === true) {
         alert(response.data.msg)
-       navigate('/profile')}
+
+        // Transmitir id para renderizar registros aqui!! :) 
+        navigate('/profile',{state:{id:1,name:'sabaoon'}}) 
+      }
       else {alert(response.data.msg)}
       
     });
