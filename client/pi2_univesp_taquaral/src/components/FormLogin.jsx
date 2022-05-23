@@ -1,18 +1,27 @@
-import { useState } from "react";
 import * as yup from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import Axios from "axios";
 
+import { useNavigate } from 'react-router-dom'
+
+
 function App() {
     
+  const navigate = useNavigate()
+
   const handleLogin = (values) => {
     Axios.post("http://localhost:3001/login", {
       email: values.email,
       password: values.password,
     }).then((response) => {
-      alert(response.data.msg);
+      if (response.data.isAuthenticated === true) {
+        alert(response.data.msg)
+       navigate('/profile')}
+      else {alert(response.data.msg)}
+      
     });
   };
+
 
   const validationsLogin = yup.object().shape({
     email: yup
@@ -25,6 +34,8 @@ function App() {
       .required("A senha é obrigatória"),
   });
 
+
+  
   return (
     <div className="container">
       <Formik

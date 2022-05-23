@@ -57,6 +57,7 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 app.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
+    let isAutenticated = false;
 
     db.query("SELECT * FROM empresasRegistradas WHERE idEmail = ?", [email], (err, result) => {
       if (err) {
@@ -64,14 +65,17 @@ app.post("/login", (req, res) => {
       }
     if (result.length > 0) {
         if (password === result[0].idSenha) {
-            res.send({ msg: "Usuário logado. Bem vindo!" })
+            res.send({ msg: "Usuário logado. Bem vindo!", isAuthenticated: true })
+
+            
+          
+
         } else {res.send({ msg: "Senha incorreta" })}
     }
       else {res.send({ msg: "Usuário inexistente"})}
     }
 )
 });
-
 
 
 
