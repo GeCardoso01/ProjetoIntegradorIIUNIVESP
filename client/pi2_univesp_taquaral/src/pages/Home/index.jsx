@@ -1,5 +1,8 @@
 //import CSS
-import "./main.css"
+import "./home.css"
+
+//react-router
+import { Link } from 'react-router-dom'
 
 function Main() {
 
@@ -17,10 +20,11 @@ function Main() {
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li> 
-                <li><a href="Cadastro.html">Cadastro</a></li>
-                <li><a href="Sobre.html">Sobre</a></li>
-                <li><a href="Contato.html">Contato</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/sobre">Sobre</Link></li>
+                <li><Link to="/contato">Contato</Link></li>
+                <li><Link to="/cadastro">Cadastro</Link></li>
+                <li><Link to="/login">Login</Link></li>
             </ul>
         </nav>
     </header>
