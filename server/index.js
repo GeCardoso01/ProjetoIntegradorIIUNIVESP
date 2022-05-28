@@ -83,7 +83,8 @@ app.post("/profile", (req, res) => {
 
   db.query("SELECT * FROM empresasRegistradas WHERE idEmail =?", [email], (err, result) => {
 
-    res.send(result)
+      res.send(result)
+
   })
   
 })
