@@ -1,18 +1,32 @@
-import { useLocation, useParams} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import Axios from 'axios'
+
+
 
 
 function Profile() {
 
-    const params = useParams();
+
     const location = useLocation();
 
     
-    console.log('params', params, location);
+    console.log('location', location.state.email);
 
+    const enviarDadosLogin = () => {
+        Axios.post("http://localhost:3001/profile", {
+            email: location.state.email
+        }).then(response => console.log(response))
+    }
+    
+
+    
     return (
-            <div> testando aqui</div>
-        
+
+        <button onClick={ () => enviarDadosLogin()}>AQUI</button>
+
+
     )
+
 }
 
 export default Profile;

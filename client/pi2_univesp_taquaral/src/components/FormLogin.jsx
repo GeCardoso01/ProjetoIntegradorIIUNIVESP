@@ -18,7 +18,7 @@ function App() {
         alert(response.data.msg)
 
         // Transmitir id para renderizar registros aqui!! :) 
-        navigate('/profile',{state:{id:1,name:'sabaoon'}}) 
+        navigate('/profile',{state:{email:values.email}}) 
       }
       else {alert(response.data.msg)}
       
