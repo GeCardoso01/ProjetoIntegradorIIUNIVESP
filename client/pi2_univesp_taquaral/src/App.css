@@ -10,3 +10,11 @@ h1 {
 .link {
   text-decoration: none;
 }
+
+.profile {
+  font-size: 25px;
+}
+
+.botaoProfile {
+  font-size: 20px;
+}

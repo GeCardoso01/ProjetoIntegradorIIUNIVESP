@@ -86,11 +86,19 @@ app.post("/profile", (req, res) => {
       res.send(result)
 
   })
-  
+})
+
+//Deletar dados do db
+app.delete("/delete", (req, res) => {
+  db.query(
+    "DELETE FROM empresasRegistradas WHERE idCNPJ =?", [req.body.id], (err, result) => {
+      if(err) {res.send({msg: err})}
+    }
+  )
 })
 
 
 
 
 
-app.listen(3001, () => console.log('rodando servidor'));
+app.listen(3001);
