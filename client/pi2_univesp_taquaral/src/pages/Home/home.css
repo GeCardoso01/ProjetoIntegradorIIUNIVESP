@@ -1,27 +1,27 @@
 /*{margin: 0; padding: 0;} */ /*- inicia todos os elementos com margin 0 e padding 0 */
 
-.container-principal{font-family: "Verdana"; color: rgb(14, 7, 3);}
+.container-principal{font-family: "Verdana"; color: #000;}
 
 /* definir as propriedades do topo */
 
-header {width: 100%; height: 40px; background-color: #87CEFA ; position: relative; top: 0;} 
+header {width: 100%; height: 60px; background-color: #74caff; position: relative; top: 0;} 
 
 /* definir as propriedades da imagem fundo da pagina */
 
-#fundo {background-color: #87CEFA; width: 100%;}
-#fundo img {background-color: #87CEFA; width: 100%; position: absolute; top: 50%; right: 0%; opacity: 15%;}
+#fundo {background-color: #00ffff; width: 100%;}
+#fundo img {background-color: #ffff; width: 100%; position: absolute; top: 50%; right: 0%; opacity: 15%;}
 
 /* definir as propriedades do menu */
 
-nav {position: absolute; right: -10px; bottom: -25px;} 
-nav ul li {float: left; position: relative;  color: #87CEFA; width: auto; margin: 0.8em; font-size: 1.5em; font-family: "verdana"; list-style-position: outside; }
-nav ul li a {text-decoration: none; color: rgb(39, 33, 33); }
-nav ul vi a:hover {color: #41d6bd}
+nav {position: absolute; right: -10px; bottom: -05px;} 
+nav ul li {float: left; position: relative;  color: #00ffff; width: auto; margin: 0.8em; font-size: 1.5em; font-family: "verdana"; list-style-position: outside; }
+nav ul li a {text-decoration: none; color: #000; }
+nav ul li a:hover {color: #00ff}
 
 /* definir as propriedades da imagem principal */
 
-#banner{width: 80%;}
-#banner img {width: 45%; position: absolutes; margin-left: 40%; margin-bottom: -5%;}
+#banner{width: 85%;}
+#banner img {width: 30%; position: absolute; margin-left: 33%; margin-bottom: -10%;}
 
 /* definir as propriedades dos pop" ups */
 
@@ -91,26 +91,26 @@ nav ul vi a:hover {color: #41d6bd}
 }
 
 /* defininir a cor de fundo da página container-principal */
-.color-page {background-color: #87CEFA;}
+.color-page {background-color: #00ffff;}
 
 /* define a cor de fundo das páginas Cadastro Sobre e Contato */
-.color-page {background-color: #87CEFA;}
+.color-page {background-color: #00ffff;}
 
 /* definir as propriedades das imagens de titulo */ 
 .img-titulo {width: 15%; height: auto; margin-bottom: 10px; position: relative; float: left; margin-right: 05%;}
-.img-titulo img {width: 50%; margin-left: 10%; margin-top: 50px;}
+.img-titulo img {width: 50%; margin-left: 10%; margin: top 50px;}
 
 /* definir as propriedades da página Cadastro */
 #Cadastro {width: 50%; position: relative; float: left;}
-#Cadastro .config-clientes {width: 45%; border: 1% solid #b50909; margin-left: 20%; padding: 0%; float: left; margin-top: 30px; background-color: rgb(247, 185, 185);}
+#Cadastro .config-clientes {width: 45%; border: 1% solid #00ffff; margin-left: 20%; padding: 0%; float: left; margin-top: 30px; background-color: rgb(247, 185, 185);}
 #Cadastro .config-clientes img {width: 40%; margin-left: 25%; margin-bottom: 10px;}
 #Cadastro .config-clientes p {width: 90%; margin-left: 5%; font-size: 1.2em; margin-bottom: 20px; text-align: center;}
 #Cadastro .config-clientes p a{color: #00ffff;}
 
 /* definir as propriedades da página Sobre */
-#container-Sobre{width: 65%; margin-left: 5%; float: left; position: relative; height: 80%; background-color: #fff;}
-#txt-Sobre {width: 40%; float: left; position: relative; padding: 5%;}
-#txt-Sobre p {width: 100%; position: relative; float: left;}
+#container-Sobre {width: 100%; margin-left: 5%; float: left; position: relative; height: 80%; background-color: #fff;}
+#txt-Sobre {width: 100%; float: left; position: relative; padding: 0%;}
+#txt-Sobre p {width: 0%; margin-left: 45%; position: relative; float: right; padding-top: 350px;  }
 #txt-Sobre dl {width: 50%;}
 #img-conteudo-Sobre {width: 45%; position: relative; float: left;}
 #img-conteudo-Sobre img {width: 100%;}
@@ -121,7 +121,7 @@ nav ul vi a:hover {color: #41d6bd}
 
 #txt-Contato form {width: 38%; position: relative; float: left; background-color: #fff; padding: 2%; top: 5%; min-height: 400px;}
 
-#txt-Contato form label {font-weight: bold;}
+#txt-Cont#Cadastro .config-clientes ato form label {font-weight: bold;}
 
 #txt-Contato form input {max-width: 100%; width: 99%; height: 30px; margin-top: 10px; margin-bottom: 15px; border: solid #b50909 1px; padding-left: 1%;}
 

@@ -40,9 +40,6 @@ return (
 
 <Container id="containerFormulario"> 
 
-<h1>Cadastre sua empresa para ser um ponto de coleta de 
-    recicláveis eletrônicos!
-</h1>
 
     <Row>
         <Col md={{span:6, offset: 3 }}>
