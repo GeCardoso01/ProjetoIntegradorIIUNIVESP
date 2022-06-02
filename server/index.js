@@ -1,19 +1,19 @@
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
+
+//ainda não usados
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 
+//conexao com o banco de dados
 const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "univesp",
     database: "registrosEcoPontos"
 })
-
-
-
 
 
 //permissoes para cors para solucionar problemas com localhost, etc. 
@@ -48,8 +48,7 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
     db.query(SQL, (err, result) => {
         console.log(err)
     })
-})
-
+});
 
 
 
@@ -57,7 +56,6 @@ idCNPJ, idRazaoSocial, idNomeDoResponsavel, idEmail, idSenha) VALUES (\
 app.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    let isAutenticated = false;
 
     db.query("SELECT * FROM empresasRegistradas WHERE idEmail = ?", [email], (err, result) => {
       if (err) {
@@ -78,5 +76,21 @@ app.post("/login", (req, res) => {
 });
 
 
+//Exibição de dados no perfil
+app.post("/profile", (req, res) => {
 
-app.listen(3001, () => console.log('rodando servidor'))
+    const email = req.body.email;
+
+  db.query("SELECT * FROM empresasRegistradas WHERE idEmail =?", [email], (err, result) => {
+
+      res.send(result)
+
+  })
+  
+})
+
+
+
+
+
+app.listen(3001, () => console.log('rodando servidor'));

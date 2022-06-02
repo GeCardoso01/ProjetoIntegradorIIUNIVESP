@@ -1,11 +1,11 @@
 //import de componentes react-boostrap
-import Container from "react-bootstrap/esm/Container"
 import FormLogin from "../../components/FormLogin"
 
 //import do arquivo css
 import './login.css'
 
 //react-router
+
 import {Link} from"react-router-dom"
 
 function Login() {
@@ -37,10 +37,10 @@ function Login() {
                
         <div className="formLoginComponent"><FormLogin /></div>   
         </div>
-        
-        
+                
         
     ) 
+
 }
 
 export default Login
