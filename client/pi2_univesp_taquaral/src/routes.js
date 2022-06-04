@@ -8,7 +8,6 @@ import Sobre from './pages/Sobre'
 import Contato from './pages/Contato'
 
 //essas duas talvez sejam retiradas do projeto:
-import Login from './pages/Login'
 import Profile from './pages/Profile'
 
 
@@ -23,7 +22,6 @@ function AppRoutes() {
                 <Route path="/sobre" element={<Sobre />} /> 
                 <Route path="/contato" element={<Contato />} /> 
 
-                <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>

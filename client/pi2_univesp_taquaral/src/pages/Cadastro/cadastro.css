@@ -1,10 +1,50 @@
-/* definir as propriedades do topo */
+body{
+    overflow-x: hidden;
+}
 
+/* definir as propriedades do topo */
 header {width: 100%; height: 40px; background-color: #00ffff; position: relative; top: 0;}
 
-/* definir as propriedades da página Cadastro */
-#Cadastro {width: 50%; position: relative; float: left;}
-#Cadastro .config-clientes {width: 45%; border: 1% solid #00ffff; margin-left: 20%; padding: 0%; float: left; margin-top: 30px; background-color: #00ffff;}
-#Cadastro .config-clientes img {width: 40%; margin-left: 25%; margin-bottom: 10px;}
-#Cadastro .config-clientes p {width: 90%; margin-left: 5%; font-size: 1.2em; margin-bottom: 20px; text-align: center;}
-#Cadastro .config-clientes p a{color: #00ffff;}
+.containerPrincipal {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+.comnponentLogin {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    width: 30%;
+    justify-content: center;
+    padding-right: 10%;
+
+}
+
+.infoComponentLogin {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.componentCadastro {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.infoComponentCadastro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.separacao {
+    border-style: double;
+    width: 2px;
+    border-color: black;
+}

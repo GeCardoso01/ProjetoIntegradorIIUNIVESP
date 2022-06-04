@@ -42,7 +42,7 @@ return (
 
 
     <Row>
-        <Col md={{span:6, offset: 3 }}>
+        <Col>
 
             <Form> 
 

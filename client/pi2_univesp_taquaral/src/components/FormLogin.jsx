@@ -40,7 +40,7 @@ function App() {
 
   
   return (
-    <div className="container">
+    <div className="">
       <Formik
         initialValues={{}}
         onSubmit={handleLogin}
@@ -58,7 +58,7 @@ function App() {
           </div>
           {/*Outro campo*/}
           <div className="form-group">
-            <Field name="password" className="form-field" placeholder="Senha" />
+            <Field name="password" className="form-field" placeholder="Senha" type="password"/>
 
             <ErrorMessage
               component="span"

@@ -22,8 +22,7 @@ function Main() {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/sobre">Sobre</Link></li>
                 <li><Link to="/contato">Contato</Link></li>
-                <li><Link to="/cadastro">Cadastro</Link></li>
-                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/cadastro">Cadastro/Login</Link></li>
             </ul>
         </nav>
     </header>
