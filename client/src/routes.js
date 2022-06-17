@@ -14,7 +14,7 @@ import Profile from './pages/Profile'
 
 function AppRoutes() {
     return (
-        <BrowserRouter>
+        <BrowserRouter history={hashHistory}>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
