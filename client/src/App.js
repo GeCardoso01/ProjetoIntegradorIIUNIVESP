@@ -1,18 +1,28 @@
-import React, { Component } from 'react'
+//import de css comum a todas as páginas
+import './App.css';
 
-class App extends Component {
-static propTypes = {
-  children: PropTypes.node
+// import de React 
+import React, {Component} from 'react'
+
+//import de routes
+import AppRoutes from './routes';
+
+//***
+
+class App extends Component {  
+    constructor(props) {    
+        super(props);    
+        this.state = {}    
+        this.connecToServer = this.connecToServer.bind(this);  
+    } 
+    connecToServer() {    
+        fetch('/');  
+    } 
+    componentDidMount() {
+        this.connecToServer();
+    } render() {
+        return (<AppRoutes />)
+    }
 }
 
-render() {
-  const { children } = this.props
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
-}
-
-export default App
+export default App;

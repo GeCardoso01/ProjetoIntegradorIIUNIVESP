@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter  } from "react-router-dom";
 
 //import de páginas
 import Home from './pages/Home'
@@ -14,7 +14,7 @@ import Profile from './pages/Profile'
 
 function AppRoutes() {
     return (
-        <BrowserRouter history={hashHistory}>
+        <HashRouter>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ function AppRoutes() {
                 <Route path="/contato" element={<Contato />} /> 
                 <Route path="/profile" element={<Profile />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

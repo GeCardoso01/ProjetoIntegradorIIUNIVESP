@@ -7,13 +7,10 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 //Variáveis de ambiente para o modeo desenvolvedor
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+  require('dotenv').config( { path: 'PJI240.env'});
 }
 console.log("Servidor modo =>", process.env.NODE_ENV);
 
-//ainda não usados
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 
 //conexão com o PostgreSQL
 //|-> Exemplo de String de conexão: postgresql://user:secret@localhost
