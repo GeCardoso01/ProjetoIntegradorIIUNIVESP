@@ -60,7 +60,10 @@ yarn-error.log*
 
 # Dependency directories
 node_modules/
+<<<<<<< HEAD
 /node_modules/
+=======
+>>>>>>> b6f3b92878485e0ddca5f318ad08e25762880759
 jspm_packages/
 
 # Optional npm cache directory
