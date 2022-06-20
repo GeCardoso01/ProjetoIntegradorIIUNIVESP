@@ -1,4 +1,4 @@
-Projeto Integrador Univesp Polo Taquaral Eixo Computação Grupo 064
+<b>Projeto Integrador Univesp Polo Taquaral Eixo Computação Grupo 064</b>
 
 Repositório destinado ao desenvolvimento do Projeto Integrador II - Univesp T20 - polo Taquaral
 
