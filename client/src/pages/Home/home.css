@@ -1,8 +1,9 @@
-/*{margin: 0; padding: 0;} */ /*- inicia todos os elementos com margin 0 e padding 0 */
+
 
 .container-principal{font-family: "Verdana"; color: #000;}
 
-/* definir as propriedades do topo */
+    
+    /* definir as propriedades do topo */
 
 header {width: 100%; height: 60px; background-color: #74caff; position: relative; top: 0;} 
 
@@ -11,6 +12,13 @@ header {width: 100%; height: 60px; background-color: #74caff; position: relative
 #fundo {background-color: #00ffff; width: 100%;}
 #fundo img {background-color: #ffff; width: 100%; position: absolute; top: 50%; right: 0%; opacity: 15%;}
 
+
+#demo  {
+    min-height: 150px;
+    text-align: left;
+  }
+
+
 /* definir as propriedades do menu */
 
 nav {position: absolute; right: -10px; bottom: -05px;} 
@@ -18,12 +26,52 @@ nav ul li {float: left; position: relative;  color: #00ffff; width: auto; margin
 nav ul li a {text-decoration: none; color: #000; }
 nav ul li a:hover {color: #00ff}
 
+#demotext {
+    color: #ffffff;
+    background: #ffffff;
+    text-shadow: 2px 3px 0 #978585, 0px 10px 5px #706464;
+    color: #00ffff;
+    background: #00ffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    
+    }
+    
+
+    #demoFont {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 25px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none solid rgb(138, 114, 114);
+        font-style: italic;
+        font-variant: small-caps;
+        text-transform: capitalize;
+        }
+
+        
+    
 /* definir as propriedades da imagem principal */
 
 #banner{width: 85%;}
 #banner img {width: 30%; position: absolute; margin-left: 33%; margin-bottom: -10%;}
 
+/* definir as propriedades na pagina principal */
+
+   
+        
 /* definir as propriedades dos pop" ups */
+
 
 .modalDialog {
     position: fixed;
@@ -71,7 +119,7 @@ nav ul li a:hover {color: #00ff}
 }
 
 .close {
-    background-color: hsl(240, 11%, 69%);
+    background-color: #fefeff;
     color: hsl(0, 0%, 6%);
     line-height: 25px;
     position: absolute;
@@ -90,6 +138,19 @@ nav ul li a:hover {color: #00ff}
     background-color: #87CEFA;  
 }
 
+.myButton {
+    color: rgb(2, 2, 2); font-size: 20px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: "Times New Roman", Times, serif; font-weight: 700; text-decoration: none; font-style: italic; font-variant: small-caps; text-transform: capitalize; background-image: linear-gradient(to right, #79b1a0c7, rgb(97, 125, 143) 50%, #253333 ); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #2271a5; }
+    .myButton:active {
+    background: #144E75; }
+    #demo {
+        min-height: 50px; padding: 10px; float: left; 
+        text-align: left;
+      }
+  
+
+    
 /* defininir a cor de fundo da página container-principal */
 .color-page {background-color: #00ffff;}
 
