@@ -25,3 +25,13 @@ nav ul li a:hover {color: #00ff}
 #txt-Contato #conta-data h5{ margin-top: 6%; margin-bottom: 4%; vertical-align: auto;}
 #txt-Contato #conta-data h5{ width: 100px;}
 
+.gradient {
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
+  }
+  

@@ -9,7 +9,7 @@ function Contato() {
 
         <div class="container-principal">
 
-            <h1><strong>Ecocentro</strong></h1>
+            <h1 className="gradient"><strong>Ecocentro</strong></h1>
             <h5>Avenida Variante Hamleto Stamato, 1820 - Vila Irmã Antonieta Farani - Bebedouro - SP</h5>
             <h5>Telefone: (17) 3343-8910</h5>
             <h5>Horário de Atendimento: Segunda à Sexta-feira das 7:00hrs às 17:00hrs</h5>
@@ -17,7 +17,7 @@ function Contato() {
             <br>
             </br>
 
-            <h2><strong>EngTec-Desenvolvimento de Sites</strong></h2>
+            <h2 className="gradient"><strong>EngTec-Desenvolvimento de Sites</strong></h2>
 
             <h5>Avenida Antonio Talarico n°39-Santa Terezinha-Bebedouro-SP</h5>
             <h5>Telefone:(17)99255-3246</h5>
