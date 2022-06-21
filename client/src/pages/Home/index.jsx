@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 function Main() {
 
     return (
+
+
+
 <div>
 
 <div class="container-principal"></div> 
@@ -119,6 +122,11 @@ function Main() {
 
 
 </div>
+
+
+
+
+
 
     )
 }
