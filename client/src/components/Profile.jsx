@@ -35,7 +35,7 @@ function Profile() {
         const email = values.resp_email;
         const nomeDoResponsavel = values.resp_nome;
         const razaoSocial = values.razao_social;
-        const senha = values.senha;
+        // const senha = values.senha;
         const telefone = values.resp_telefone;
         
         const userInformation = [
@@ -80,14 +80,13 @@ function Profile() {
 
         <div>
         Você tem alguma dúvida sobre seu cadastro? 
-        Entre em contato conosco através do telefone: (XX) XXXX-XXXX
-        Ou utilize o e-mail xxxxxx@gmail.com
+        Entre em contato conosco através do e-mail reciclaelectron@gmail.com
         </div>
         <br/>
         <div>
         Gostaria de cancelar seu cadastro? Utilize o botão abaixo.
         <br/>
-        Seus dados serão deletados, caso decida voltar terá que se cadastrar
+        Seus dados serão deletados, caso decida retornar, terá que se cadastrar
         novamente!
         </div> 
         <button onClick={() => DeletarCadastro()} className="botaoProfile">Retirar Cadastro de EcoPonto</button>
