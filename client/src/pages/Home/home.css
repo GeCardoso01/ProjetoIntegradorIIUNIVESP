@@ -62,7 +62,7 @@ nav ul li a:hover {color: #00ff}
 /* definir as propriedades da imagem principal */
 
 #banner{width: 85%;}
-#banner img {width: 30%; position: absolute; margin-left: 33%; margin-bottom: -10%;}
+#banner img {width: 30%; position: relative; margin-left: 33%; margin-bottom: -10%;}
 
 
 /* definir as propriedades na pagina principal */
@@ -170,7 +170,7 @@ nav ul li a:hover {color: #00ff}
 
 /* definir as propriedades da página Sobre */
 #container-Sobre {width: 100%; margin-left: 5%; float: left; position: relative; height: 80%; background-color: #fff;}
-#txt-Sobre {width: 100%; float: left; position: relative; padding: 0%;}
+#txt-Sobre {width: 100%; float: left; position: relative; padding: 0%; }
 #txt-Sobre p {width: 0%; margin-left: 45%; position: relative; float: right; padding-top: 350px;  }
 #txt-Sobre dl {width: 50%;}
 #img-conteudo-Sobre {width: 45%; position: relative; float: left;}
@@ -197,3 +197,6 @@ nav ul li a:hover {color: #00ff}
 #txt-Contato #conta-data h5{ width: 100px;}
 #txt-Contato #conta-data h5{ width: 100px;}
 
+.separador {
+    height: 500px;
+}
